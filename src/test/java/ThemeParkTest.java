@@ -28,17 +28,17 @@ public class ThemeParkTest {
         iceCreamStall = new IceCreamStall("Scoops", "Mr Freeze", ParkingSpot.A1, 4);
         stallList = new ArrayList<>();
         stallList.add(iceCreamStall);
-//        themePark = new ThemePark(attractionList, stallList);
+        themePark = new ThemePark(attractionList, stallList);
         parkPlaces = new ArrayList<>();
         parkPlaces.add(rollerCoaster);
         parkPlaces.add(iceCreamStall);
-        themePark = new ThemePark(parkPlaces);
+//        themePark = new ThemePark(parkPlaces);
     }
 
-//    @Test
-//    public void hasAttractions(){
-//        assertEquals(1, themePark.getNumberOfAttractions());
-//    }
+    @Test
+    public void hasAttractions(){
+        assertEquals(1, themePark.getNumberOfAttractions());
+    }
 
     @Test
     public void canGetReviews(){
@@ -46,6 +46,11 @@ public class ThemeParkTest {
         reviews.add(5);
         reviews.add(4);
         assertEquals(reviews, themePark.getReviews() );
+    }
+
+    @Test
+    public void canIncrementVisitorCount(){
+        
     }
 
 }
