@@ -1,6 +1,6 @@
 import attractions.Attraction;
 import attractions.RollerCoaster;
-import attractions.RollercoasterTest;
+import behaviours.IReviewed;
 import org.junit.Before;
 import org.junit.Test;
 import stalls.IceCreamStall;
@@ -18,6 +18,7 @@ public class ThemeParkTest {
     ArrayList<Stall> stallList;
     RollerCoaster rollerCoaster;
     IceCreamStall iceCreamStall;
+    ArrayList<IReviewed> parkPlaces;
 
     @Before
     public void before(){
@@ -27,12 +28,24 @@ public class ThemeParkTest {
         iceCreamStall = new IceCreamStall("Scoops", "Mr Freeze", ParkingSpot.A1, 4);
         stallList = new ArrayList<>();
         stallList.add(iceCreamStall);
-        themePark = new ThemePark(attractionList, stallList);
+//        themePark = new ThemePark(attractionList, stallList);
+        parkPlaces = new ArrayList<>();
+        parkPlaces.add(rollerCoaster);
+        parkPlaces.add(iceCreamStall);
+        themePark = new ThemePark(parkPlaces);
     }
 
+//    @Test
+//    public void hasAttractions(){
+//        assertEquals(1, themePark.getNumberOfAttractions());
+//    }
+
     @Test
-    public void hasAttractions(){
-        assertEquals(1, themePark.getNumberOfAttractions());
+    public void canGetReviews(){
+        ArrayList<Integer> reviews = new ArrayList<>();
+        reviews.add(5);
+        reviews.add(4);
+        assertEquals(reviews, themePark.getReviews() );
     }
 
 }

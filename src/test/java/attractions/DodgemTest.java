@@ -4,17 +4,20 @@ import org.junit.Before;
 import org.junit.Test;
 import people.Visitor;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class DodgemTest {
 
     Dodgems dodgems;
     Visitor visitor;
+    ArrayList<Attraction> visitedAttractions;
 
     @Before
     public void setUp() throws Exception {
         dodgems = new Dodgems("Bumper Cars", 5);
-        visitor = new Visitor(10, 150, 6);
+        visitor = new Visitor(10, 150, 6, visitedAttractions);
     }
 
 
